@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cab Fare Prediction</title>
+</head>
+
+<body>
+
+    <h1>Cab Fare Prediction Platform</h1>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" step="any"
+               name="distance"
+               placeholder="Distance (KM)" required>
+
+        <br><br>
+
+        <input type="number" step="any"
+               name="traffic"
+               placeholder="Traffic Level (1-5)" required>
+
+        <br><br>
+
+        <input type="number" step="any"
+               name="time_hours"
+               placeholder="Time Hours" required>
+
+        <br><br>
+
+        <input type="number" step="any"
+               name="weather"
+               placeholder="Weather Condition" required>
+
+        <br><br>
+
+        <input type="number" step="any"
+               name="peak_hour"
+               placeholder="Peak Hour (0 or 1)" required>
+
+        <br><br>
+
+        <button type="submit">
+            Predict Fare
+        </button>
+
+    </form>
+
+    {% if prediction %}
+
+        <h2>
+            Predicted Fare :
+            ₹ {{ prediction }}
+        </h2>
+
+    {% endif %}
+
+</body>
+</html>
